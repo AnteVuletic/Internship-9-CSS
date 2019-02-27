@@ -1,10 +1,8 @@
-@font-face {
-    font-family: "Code2000";
-    src: url("./CODE2000.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
 
+body{
+    margin: 0;
+    padding: 0;
+}
 .item{
     display: flex;
     width: 50%;
@@ -43,53 +41,214 @@
     display: table;
     clear: both;
 }
-.item__overlay{
-    width: 100%;
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
 .item__heart_wrapper{
+    box-sizing: border-box;
     position: absolute;
     display: inline-block;
+    z-index: 4;
+    bottom: 2.5%;
+    right: 2.5%;
+    font-weight: bolder;
     background-color: white;
     border-radius: 50%;
-    bottom: 10%;
-    right: 2%;
-    padding: 7.5%;
-    text-align: center;
+    padding: 2%;
+    color: #2D2D2D;
 }
 .item__heart_wrapper:hover > .item__heart{
     display: none;
 }
 .item__heart_wrapper:hover > .item__heart--full{
-    display: table;
+    display: inline-block;
 }
 .item__heart{
-    position: absolute;
-    top: 0;
-    right: 25%;
-    font-weight: bolder;
-    font-size: 150%;
+    position: relative;
+    display:inline-block;
+    font-size: 200%;
+    line-height: 100%;
+    padding: 5% 5% 0% 5%
 }
 .item__heart--full{
-    position: absolute;
+    position: relative;
     display: none;
-    top: 7%;
-    font-size: 120%;
+    font-size: 130%;
     font-weight: bolder;
-    right: 20%;
+    line-height: 150%;
+    padding: 10% 10% 0% 10%;
 }
 .item__category{
+    display: none;
+    position: absolute;
+    bottom: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-variant-caps: all-petite-caps;
+    font-weight: 500;
     background-color: rgba(255,255,255,0.6);
-    display: block;
     width: 100%;
     text-align: center;
-    font-size: 110%;
-    padding: 10px 0px;
-    left: 20%;
+    font-size: 150%;
+    padding: 0 0 2% 0;
+}
+.item__wrapper:hover .item__category{
+    display: block;
 }
 .item__description{
+    font-size: 80%;
+}
+.item__price{
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    color: slategray;
+    margin-top: 10%;
+    font-size: 90%;
+    font-weight: 600;
 }
 
+nav{
+    display: flex;
+    background-color: #EEEEEE;
+    padding: 0% 26% 0.5% 26%;
+    flex-wrap: wrap;
+}
+nav button{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    text-align: start;
+    font-size: 90%;
+    font-weight: 600;
+    color: slategray;
+    border: 0.5px solid rgba(125,125,125,0.5);
+    outline: 0;
+    padding: 5% 5px;
+}
+.arrow_up{
+    position: absolute;
+    display: none;
+    font-size: 120%;
+    font-weight: bolder;
+    right: 4%;
+    top: 15%;
+}
+.arrow_down{
+    position: absolute;
+    font-size: 200%;
+    font-weight: bolder;
+    right: 5%;
+    top: 5%;
+}
+nav button:hover .arrow_down{
+    display: none;
+}
+nav button:hover .arrow_up{
+    display: inline;
+}
+nav > .menu__wrapper > button:hover{
+    border-color: #0770CF;
+    color:#0770CF;
+    border-top-width: 5px;
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-bottom: 0;
+}
+.menu__wrapper{
+    width: 15.5%;
+    margin-left: 1%;
+    margin-top: 1%;
+    overflow: visible;
+}
+.menu__wrapper:hover .category{
+    display: block;
+}
+.category{
+    display: none;
+    position: absolute;
+    background-color: silver;
+    width: 11%;
+    height: 33%;
+    border: 0.5px solid rgba(125,125,125,0.5);
+    z-index: 9999;    
+}
+.category__items{
+    overflow-y: scroll;
+    height: 80%;
+}
+.category__item{
+    display: block;
+    text-align: center;
+    margin: 5% 5%;
+    padding: 5% 55% 5% 5%;
+    background-color: white;
+    border-radius: 5px;
+}
+.category__header{
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    background-color: white;
+    border-top: 0.5px solid rgba(125,125,125,0.5);
+    border-bottom: 0.5px solid rgba(125,125,125,0.5);
+    height: 18%;
+    justify-content: space-between;
+    padding: 4% 6%;
+}
+.category__header span{
+    display: inline-block;
+    font-size: 80%;
+}
+.category__header button{
+    display: inline-block;
+    border: 0.5px solid rgba(125,125,125,0.5);
+    width: fit-content;
+    height: fit-content;
+    padding: 5% 8%;
+    outline: 0;
+    font-variant-caps: all-petite-caps;
+}
+.category__header button:hover{
+    color:#0770CF;
+    border: 1px solid #0770CF;
+}
+@media screen and (max-width: 768px){
+    .item{
+        width: 70%;
+    }
+    .item__wrapper{
+        flex-basis: 45%;
+    }
+    .menu__wrapper{
+        width: 24%;
+    }
+    nav{
+        padding: 0 10% 0.5% 10%;
+    }
+    .item__heart_wrapper{
+        padding: 3% 4%;
+    }
+    .item__heart{
+        padding: 5% 5% 0 0;
+    }
+    .category{
+        width: 33%;
+    }
+}
+@media screen and (max-width: 375px){
+    .item{
+        width: 90%;
+    }
+    .item__wrapper{
+        flex-basis: 100%;
+    }
+    nav{
+        padding: 0 5% 0.5% 5%;
+    }
+    .menu__wrapper{
+        width: 32.2%;
+    }
+    .category{
+        width: 44%;
+    }
+    .category__header{
+        padding: 1.5% 3%;
+    }
+}
