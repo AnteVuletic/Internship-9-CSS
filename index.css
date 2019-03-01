@@ -152,10 +152,12 @@ nav > .menu__wrapper > button:hover{
     border-bottom: 0;
 }
 .menu__wrapper{
+    box-sizing: border-box;
     width: 15.5%;
     margin-left: 1%;
     margin-top: 1%;
     overflow: visible;
+    font-size: 12px;
 }
 .menu__wrapper:hover .category{
     display: block;
@@ -229,7 +231,7 @@ nav > .menu__wrapper > button:hover{
         padding: 5% 5% 0 0;
     }
     .category{
-        width: 33%;
+        width: 25%;
     }
 }
 @media screen and (max-width: 375px){
@@ -246,7 +248,7 @@ nav > .menu__wrapper > button:hover{
         width: 32.2%;
     }
     .category{
-        width: 44%;
+        width: 33%;
     }
     .category__header{
         padding: 1.5% 3%;
